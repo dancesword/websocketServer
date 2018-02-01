@@ -9,6 +9,8 @@ public class WebsocketServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WebsocketServerApplication.class, args);
 		
-		Server.serverMain();
+		ServerService serverService = new ServerService();
+		Thread thread = new Thread(serverService);
+		thread.start();
 	}
 }
